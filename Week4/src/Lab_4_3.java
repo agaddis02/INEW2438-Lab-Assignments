@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Lab_4_3 {
+
+	public static void main(String[] args) {
+		
+		// Declare Variables for lottery number
+		double lotteryNum1 = (Math.random() * 10);
+		double lotteryNum2 = (Math.random() * 10);
+		
+		// Generate a lottery #  
+		String lottery = "" + (int)lotteryNum1 + (int)lotteryNum2;
+		
+		System.out.println(lottery);
+		// Prompt the user to enter a guess 
+		Scanner toth = new Scanner(System.in);
+		System.out.print("Enter your lottery pick (two digits): ");
+		String guess = toth.nextLine();
+
+		// Get digits from lottery 
+		char lotteryDigit1 = lottery.charAt(0);
+		char lotteryDigit2 = lottery.charAt(1);
+
+		// Get digits from guess 
+		char guessDigit1 = guess.charAt(0);
+		char guessDigit2 = guess.charAt(1);
+
+		System.out.println("The lottery number is " + lottery);
+
+		// Check guesses for any winners
+		if (guess.equals(lottery)) {
+			System.out.println("Great Job!! Perfect match, you win $10,000.");
+		}
+		else if (guessDigit2 == lotteryDigit1 && guessDigit1 == lotteryDigit2) {
+			System.out.println("You matched the digits, just not the correct order,  you win $3,000.");
+		}
+		else if (guessDigit1 == lotteryDigit1 || guessDigit1 == lotteryDigit2 || guessDigit2 == lotteryDigit1 || guessDigit2 == lotteryDigit2) {
+			System.out.println("You got matched one digit, you win $1,000.");
+		}
+		else {
+			System.out.println("No luck for you today man.");
+		}
+
+	}
+
+}
