@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Course {
 	/* Declare members */
 	private String courseName;
-	private ArrayList<Student> students = new ArrayList<Student>();
+	private static ArrayList<Student> students = new ArrayList<Student>();
 
 /* Method - constructor */
 	Course(String _courseName) {
@@ -34,7 +34,8 @@ int getNumberOfStudents() {
 /* Method - Drop student from course */
 void dropStudent(int studentNumber) {
 	for (int i=0; i < students.size(); i++) {
-		if (students.get(i).studentNumber == studentNumber) {
+		students.get(i);
+		if (Student.GetStudentNumber() == studentNumber) {
 			students.remove(i);
 		}
 	}
